@@ -2,7 +2,7 @@
 <!---
 
 This README is automatically generated from the comments in these files:
-iron-ajax.html  iron-request.html
+ajax-cache.html  iron-request.html
 
 Edit those files, and our readme bot will duplicate them over here!
 Edit this file, and the bot will squash your changes :)
@@ -12,24 +12,23 @@ thing! https://github.com/PolymerLabs/tedium/issues
 
 -->
 
-[![Build status](https://travis-ci.org/PolymerElements/iron-ajax.svg?branch=master)](https://travis-ci.org/PolymerElements/iron-ajax)
+##&lt;ajax-cache&gt;
 
-_[Demo and API docs](https://elements.polymer-project.org/elements/iron-ajax)_
-
-
-##&lt;iron-ajax&gt;
-
-The `iron-ajax` element exposes network request functionality.
+The `ajax-cache` element exposes network request functionality.
 
 ```html
-<iron-ajax
+<ajax-cache
+	cache
     auto
     url="https://www.googleapis.com/youtube/v3/search"
     params='{"part":"snippet", "q":"polymer", "key": "YOUTUBE_API_KEY", "type": "video"}'
     handle-as="json"
     on-response="handleResponse"
-    debounce-duration="300"></iron-ajax>
+    debounce-duration="300"></ajax-cache>
 ```
+
+This element is an overloaded replacement of `iron-ajax` it includes the `cache` property which enabled 
+storing requests as <k,v> pairs in PouchDb.
 
 With `auto` set to `true`, the element performs a request whenever
 its `url`, `params` or `body` properties are changed. Automatically generated
